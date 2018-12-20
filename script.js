@@ -7,17 +7,15 @@ var li;
 
 
 
-// alert("Connected")
-var addButton=document.getElementById('add');
+var addButton=document.getElementById('add');      //initialising add button
 addButton.addEventListener('click', addItem);     //addItem is a function defined later
 
-var removeButton=document.getElementById('remove');
+var removeButton=document.getElementById('remove');        //initialising remove button
 removeButton.addEventListener('click', removeItem);       //removeItem is a function defined later
 
 
 function removeItem(){
-    //li contains all the children of ul
-    li=ul.children;
+    li=ul.children;                                   //li array contains all the children of ul
     for(let index=0; index<li.length; index++){
         //li is an array which contains all the elements
         //each element in li have children which is either checked or unchecked
@@ -29,11 +27,11 @@ function removeItem(){
 }
 
 function addItem(){
-    var input=document.getElementById('input');//initialising text input 
+    var input=document.getElementById('input');//initialising text input
     var item=input.value;
     ul=document.getElementById('list');//ul is the list of todos
     var textnode=document.createTextNode(item);//making a text node from the input from the user
-    
+
     //if user inputs empty string
     if(item==''){
         return false;
